@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VeterinaryBio Dromedary Asset Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "species", "generatedAt", "assets"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "species": { "const": "Camelus dromedarius" },
+    "generatedAt": { "type": "string", "format": "date" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "systemId", "sex", "file", "format", "specimenIds", "sources", "license", "status", "meshNames"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "systemId": { "type": "string", "minLength": 1 },
+          "sex": { "enum": ["all", "male", "female"] },
+          "file": { "type": "string", "pattern": "\\.(glb|gltf)$" },
+          "format": { "enum": ["glb", "gltf"] },
+          "specimenIds": { "type": "array", "items": { "type": "string" } },
+          "sources": { "type": "array", "items": { "type": "string" } },
+          "license": { "type": "string" },
+          "status": { "enum": ["unverified", "under_review", "verified", "approved_for_training"] },
+          "reviewer": { "type": "string" },
+          "reviewedAt": { "type": "string", "format": "date" },
+          "meshNames": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
