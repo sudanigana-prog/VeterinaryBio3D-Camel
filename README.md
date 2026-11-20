@@ -1,20 +1,35 @@
 # VeterinaryBio 3D Camel
 
-A bilingual educational 3D anatomy platform for the one-humped dromedary camel (*Camelus dromedarius*), designed to support veterinary anatomy learning and, after expert validation, surgical education.
+A bilingual anatomy workspace for the one-humped dromedary camel (*Camelus dromedarius*), with an evidence-first architecture intended to grow into a veterinary surgical education platform.
 
-## Project status
+## Current implementation status
 
-This repository was empty at the start of implementation. Phase 1 is being established on a dedicated feature branch. No clinical-grade camel anatomical meshes or validated surgical guidance are included at this stage.
+This repository started empty. Development is taking place on `feature/phase-1-foundation` and is proposed through [Pull Request #1](https://github.com/sudanigana-prog/VeterinaryBio3D-Camel/pull/1).
 
-## Phase 1 scope
+Implemented:
+- React + TypeScript + Vite + React Three Fiber viewer foundation.
+- Male/female selection and a shared anatomical catalogue with sex-specific reproductive systems.
+- English/Arabic labels, structure search, metadata and verification status.
+- Versioned GLB manifest, manifest validation and reviewed-asset loading.
+- Data provenance rules, scientific reference register, and DICOM-to-3D workflow documentation.
+- Electron desktop shell, CI workflow and unit tests.
 
-- Full-body workspace for dromedary camel anatomy.
-- Shared anatomical systems with sex-specific reproductive structures.
-- Selectable anatomy systems and structures.
-- Structure metadata, bilingual labels, and provenance/verification status.
-- Explicitly marked placeholders until camel-specific source assets are reviewed.
-- Documented imaging-to-3D asset workflow.
+Not yet delivered:
+- No real camel CT/MRI-derived GLB anatomy models are included.
+- The fallback 3D shape is a demonstration placeholder, not anatomy.
+- No procedure-specific surgical simulation or clinically validated guidance is enabled.
 
-## Scientific safety
+## Quick start
 
-Generic mammalian anatomy, procedural geometry, and AI-generated assets must never be represented as verified dromedary anatomy. Surgical approaches, safe zones, and procedural steps require camel-specific evidence and qualified veterinary review.
+See [Getting Started](docs/GETTING_STARTED.md).
+
+```bash
+npm install
+npm run dev
+```
+
+## Scientific and data integrity
+
+Only dromedary-specific evidence may support anatomical verification. Every model must carry specimen provenance, source references, license/permission, mesh names, reviewer and review date. Generic mammalian meshes and generated placeholder geometry must never be labelled as verified camel anatomy.
+
+Surgical-training approval is a separate gate from anatomical verification and requires procedure-specific expert review. This project is an educational software prototype, not a clinical decision-support system.
