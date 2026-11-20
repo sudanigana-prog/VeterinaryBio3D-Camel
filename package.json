@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "electron": "electron .",
     "electron:dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\""
   },
@@ -31,5 +31,6 @@
     "vite": "^6.0.5",
     "vitest": "^2.1.8",
     "wait-on": "^8.0.1"
-  }
+  },
+  "main": "electron/main.cjs"
 }
